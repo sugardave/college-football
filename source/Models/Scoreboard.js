@@ -1,7 +1,7 @@
 enyo.kind({
 	name: "Scoreboard",
-	kind: enyo.Collection,
-	model: GameDay,
+	kind: "enyo.Collection",
+	model: "GameDay",
 	defaultSource: "jsonp",
 	// this is the url we want to use to request the data for the games but notice the `%.` that
 	// we will use with _enyo.format_ to replace that with the current week

@@ -1,6 +1,6 @@
 enyo.kind({
 	name: "GameDay",
-	kind: enyo.Model,
+	kind: "enyo.Model",
 	mergeKeys: ["day"],
 	// this is a read-only example, and this flag means if _destroy_ is called on this
 	// model it will only do the local routines
@@ -15,7 +15,7 @@ enyo.kind({
 			// also note the use of the _owner_ property here that is only useful if you destroy this
 			// GameDay model (the owner of the the collection we're creating) it will also destroy
 			// the collection since we _own_ it
-			data.games = new enyo.Collection(data.games, {model: Game, owner: this, didFetch: true});
+			data.games = new enyo.Collection(data.games, {model: "Game", owner: this, didFetch: true});
 		} else {
 			// if this is one of the updates we don't need to replace the entire
 			// collection we simply need to merge the new data in

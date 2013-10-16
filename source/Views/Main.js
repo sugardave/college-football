@@ -1,19 +1,21 @@
 enyo.kind({
 	name: "Main",
-	kind: enyo.Scroller,
-	fit: true,
+	kind: "enyo.Scroller",
 	classes: "college-football",
+	bindings: [
+		{from: ".app.week", to: ".$.week.content"}
+	],
 	components: [
 		{classes: "game-week", components: [
 			{tag: "span", content: "NCAAF Week "},
-			{tag: "span", name: "week"}	
+			{name: "week", tag: "span"}
 		]},
-		{kind: enyo.DataRepeater, components: [
+		{kind: "enyo.DataRepeater", controller: ".app.controllers.scoreboard", components: [
 			{classes: "game-day", components: [
 				{classes: "date", components: [
 					{name: "date"}
 				]},
-				{name: "games", classes: "games", kind: enyo.DataRepeater, components: [
+				{name: "games", classes: "games", kind: "enyo.DataRepeater", components: [
 					{classes: "game", components: [
 						{classes: "game-teams", components: [
 							{name: "away", classes: "away-team", kind: "Team", orientation: "away"},
@@ -33,9 +35,6 @@ enyo.kind({
 				{from: ".model.games", to: ".$.games.controller"},
 				{from: ".model.day", to: ".$.date.content"}
 			]}	
-		], controller: ".app.controllers.scoreboard"}
-	],
-	bindings: [
-		{from: ".app.week", to: ".$.week.content"}
+		]}
 	]
 });

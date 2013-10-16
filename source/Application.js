@@ -1,9 +1,9 @@
 enyo.kind({
 	name: "Application",
-	kind: enyo.Application,
-	view: Main,
+	kind: "enyo.Application",
+	view: "Main",
 	controllers: [
-		{name: "scoreboard", kind: Scoreboard}
+		{name: "scoreboard", kind: "Scoreboard"}
 	],
 	// in this method all we're doing is calling fetch with the `merge` strategy indicated
 	// of course this app doesn't currently supply an interactive UI button or timer to

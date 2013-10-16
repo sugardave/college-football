@@ -2,12 +2,6 @@ enyo.kind({
 	name: "Team",
 	classes: "team",
 	orientation: "home",
-	components: [
-		{name: "score", classes: "team-score"},
-		{name: "logo", classes: "logo", kind: enyo.Image},
-		{name: "teamName", classes: "team-name"},
-		{classes: "banner", content: "winner"}
-	],
 	bindings: [
 		// binding from a computed property...
 		{from: ".model.logo", to: ".$.logo.src"},
@@ -15,6 +9,12 @@ enyo.kind({
 		// binding from a computed property...
 		{from: ".model.won", to: ".winner"},
 		{from: ".model.nameRaw", to: ".$.teamName.content"}
+	],
+	components: [
+		{name: "score", classes: "team-score"},
+		{name: "logo", classes: "logo", kind: "enyo.Image"},
+		{name: "teamName", classes: "team-name"},
+		{classes: "banner", content: "winner"}
 	],
 	// when the computed property for `won`, bound to our local property
 	// `winner` is set, this method will detect the change and fire which
